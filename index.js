@@ -1,15 +1,17 @@
+// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { message } = require('statuses');
-// TODO: Include packages needed for this application
+const path = require("path");
+//const { message } = require('statuses');
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
-inquirer.prompt(
+const questions = 
     [
         {
 
             type: 'input',
-            message="Your Project Title",
+            message: "Your Project Title",
             name:'title',
             // Validator for input
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
@@ -24,14 +26,7 @@ inquirer.prompt(
         {
 
             type: 'input',
-            message: 'Please list a Table of Contents for your app',
-            name: 'table of contents',
-            validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
-        },
-        {
-
-            type: 'input',
-            message="How do you install your app?",
+            message: "How do you install your app?",
             name:'installation',
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
 
@@ -40,7 +35,7 @@ inquirer.prompt(
         {
 
             type: 'input',
-            message="How is your app used?",
+            message: "How is your app used?",
             name:'usage',
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
 
@@ -49,7 +44,7 @@ inquirer.prompt(
         {
 
             type: 'input',
-            message="Please list credits for your app",
+            message: "Please list credits for your app",
             name:'credits',
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
 
@@ -57,8 +52,9 @@ inquirer.prompt(
         },
         {
 
-            type: 'input',
-            message="Please input any licenses used for your app",
+            type: 'list',
+            message: "Please choose a license",
+            choices: ["MIT" , "Apache 2.0" , "BSD 3" , "None"],
             name:'license',
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
 
@@ -67,24 +63,55 @@ inquirer.prompt(
         {
 
             type: 'input',
-            message="Github Username",
+            message: "Github Username",
             name:'git',
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
 
 
         },
+        {
 
-    ]
-)
+            type: 'input',
+            message: "Contributions",
+            name:'contributions',
+            validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
+
+
+        },
+        {
+
+            type: 'input',
+            message: "Tests",
+            name:'tests',
+            validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
+
+
+        },
+        {
+
+            type: 'input',
+            message: "Email",
+            name:'email',
+            validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
+
+
+        },
+
+    ];
 //const questions = ['Title', 'Description', 'Table of Contents', 'Installation', 'Usage', 'Credits', 'License'];
 
 // TODO: Create a function to write README file
 function writeToFile(README, data) {
-
+return fs.writeFileSync(path.join(process.cwd(), README), data);
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then(userResponses => {
+        console.log("userResponses", userResponses);
+        writeToFile("generatedReadme.md", generateMarkdown({ ...userResponses}));
+    });
+}
 
 // Function call to initialize app
 init();
