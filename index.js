@@ -54,7 +54,7 @@ const questions =
 
             type: 'list',
             message: "Please choose a license",
-            choices: ["MIT" , "Apache 2.0" , "BSD 3" , "None"],
+            choices: ['MIT' , 'Apache2.0' , 'BSD3' , 'None'],
             name:'license',
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
 
@@ -65,15 +65,6 @@ const questions =
             type: 'input',
             message: "Github Username",
             name:'git',
-            validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
-
-
-        },
-        {
-
-            type: 'input',
-            message: "Contributions",
-            name:'contributions',
             validate: (value)=>{ if(value){return true} else {return 'please input a value to continue'}},
 
 

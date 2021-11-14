@@ -1,9 +1,9 @@
-# wrewrewreqwrewr
-![license](https://img.shields.io/badge/license-BSD 3-orange.svg)
+# 23213
+![license](https://img.shields.io/badge/license-Apache2.0-orange.svg)
 
 ## Description
 
-rwewtwetwetwetew
+131231
 
 ## Table of Contents
 
@@ -16,29 +16,29 @@ rwewtwetwetwetew
 * [Questions](#questions)
 
 ## Installation
-Clone this repository to your local machine and then run npm init in your local terminal
+13131
 
 ## Usage
 
-by issuing a node index.js it will ask a series of questions, answer them and will no longer have to handcraft your readme.md
+13131
 
 ## Tests
 
-no automatic tests written for this it is in the pipleline to add some jest tests in the future 
+1313131
 
 ## License
 
-BSD 3
+This app is governed by Apache2.0 license.
 
 ## Contributing
 
-2eqweqwewq
+For contributing to the improvements of this project, please contact me via email 13131131. You can also find me using my Github handle 131231.
 
 ## Credits 
 
-Google.com , Stackoverflow , NPM packages 
+131231
 
 ## Questions
 
-If you have any questions , feel free to reach me via e-mail at alystrife@gmail.com For any code related questions or to look at my other projects , check out my Guthub at www.github.com/alysnyder
+If you have any questions , feel free to reach me via e-mail at 13131131 For any code related questions or to look at my other projects , check out my Guthub at www.github.com/131231
 
