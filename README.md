@@ -20,7 +20,7 @@ Clone my repo to your local machine, then install npm init in your terminal to r
 
 ## Usage
 
-node index.js file will create a professional readme for your project.
+[Walkthrough Video](https://raw.githubusercontent.com/AlySnyder/readme-generator/main/Walkthrough.mov)
 
 ## Tests
 
